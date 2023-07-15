@@ -295,10 +295,12 @@
 		}).then((result) => {
 			if (result.isConfirmed && result.value.id) {
 				handleUpdateEmployee(result.value)
+				return
 			}
 
 			if (result.isConfirmed && !result.value.id) {
 				handleCreateEmployee(result.value)
+				return
 			}
 		})
 	}
