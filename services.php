@@ -9,11 +9,10 @@ class Services
 		$username = "emp_manager_db_user";
 		$password = "tM3bQGgoCaExkKO1DL01AQoTf9n1xoqN";
 		$database = "emp_manager_db";
-		$port = 3305;
 
 		try {
 			// Create a connection
-			$this->db = new PDO("pgsql:host=$servername;port=$port;dbname=$database", $username, $password);
+			$this->db = new PDO("pgsql:host=$servername;dbname=$database", $username, $password);
 			// Set PDO error mode to exception
 			$this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		} catch (PDOException $e) {
