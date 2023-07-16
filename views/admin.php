@@ -34,9 +34,9 @@
 				<div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
 					<form class="form-inline mr-auto w-100 navbar-search">
 						<div class="input-group">
-							<input type="text" value="" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+							<input id="search2" type="text" oninput="handleSearch()" value="" class="form-control bg-light border-0 small" placeholder="Search Name" aria-label="Search" aria-describedby="basic-addon2">
 							<div class="input-group-append">
-								<button class="btn btn-primary" type="button">
+								<button class="btn btn-primary" type="button" onclick="handleSearch()">
 									<i class="fas fa-search fa-sm"></i>
 								</button>
 							</div>
@@ -171,7 +171,7 @@
 	function getEmployeeList() {
 		showLoading()
 
-		const q = $("input#search").val() || ""
+		const q = $("input#search").val() || $("input#search2").val() || ""
 		const url = `${window.location.origin}/api/employee/list?q=${q}`;
 
 		$.ajax({
