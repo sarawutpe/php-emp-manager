@@ -41,7 +41,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"test\",\r\n    \"salary\": \"10000\",\r\n    \"dateEmployed\": \"2023-07-15T22:31\",\r\n    \"position\": \"Manager\",\r\n    \"status\": \"1\"\r\n}",
+					"raw": "{\r\n    \"name\": \"test\",\r\n    \"salary\": \"10000\",\r\n    \"date_employed\": \"2023-07-15T22:31\",\r\n    \"position\": \"Manager\",\r\n    \"status\": \"1\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
