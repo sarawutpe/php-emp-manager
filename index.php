@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set('Asia/Bangkok');
 require_once "lib/AltoRouter.php";
 include_once "services.php";
 

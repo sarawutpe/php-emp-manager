@@ -111,7 +111,8 @@
 								<th>Date Employed</th>
 								<th>Position</th>
 								<th>Status</th>
-								<th>Create Time</th>
+								<th>Created Time</th>
+								<th>Updated Time</th>
 							</tr>
 						</thead>
 						<tbody id="data-table"></tbody>
@@ -207,10 +208,11 @@
 							</td>
 							<td>${employee.name}</td>
 							<td>${employee.salary}</td>
-							<td>${employee.date_employed}</td>
+							<td>${dayjs(employee.date_employed).format('YYYY-MM-DD')}</td>
 							<td>${employee.position}</td>
 							<td><div class="ml-3 rounded-circle ${employee.status == 1 ? 'bg-success' : 'bg-danger'}" style="width: 10px; height: 10px"></div></td>
-							<td>${employee.timestamp}</td>
+							<td>${dayjs(employee.created_at).format('YYYY-MM-DD HH:mm:ss')}</td>
+							<td>${dayjs(employee.updated_at).format('YYYY-MM-DD HH:mm:ss')}</td>
 						</tr>
       		`;
 				});
@@ -246,7 +248,7 @@
 					</div>
 					<div class="form-group">
 						<label class="w-100 text-left" style="font-size: 14px">Date Employed</label>
-						<input id="date-employed" type="datetime-local" value="${data.date_employed || dayjs().format('YYYY-MM-DDTHH:mm')}" class="form-control">
+						<input id="date-employed" type="datetime-local" value="${data.date_employed || dayjs().format('YYYY-MM-DD HH:mm:ss')}" class="form-control">
 					</div>
 					<div class="form-group">
 						<label class="w-100 text-left" style="font-size: 14px">Position*</label>

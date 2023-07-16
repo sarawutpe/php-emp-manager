@@ -31,7 +31,7 @@ CREATE TABLE `employees` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `salary` decimal(10,2) NOT NULL,
-  `dateEmployed` timestamp NOT NULL DEFAULT current_timestamp(),
+  `date_employed` timestamp NOT NULL DEFAULT current_timestamp(),
   `position` varchar(255) NOT NULL,
   `status` tinyint(1) NOT NULL,
   `timestamp` timestamp NOT NULL DEFAULT current_timestamp()
@@ -41,7 +41,7 @@ CREATE TABLE `employees` (
 -- Dumping data for table `employees`
 --
 
-INSERT INTO `employees` (`id`, `name`, `salary`, `dateEmployed`, `position`, `status`, `timestamp`) VALUES
+INSERT INTO `employees` (`id`, `name`, `salary`, `date_employed`, `position`, `status`, `timestamp`) VALUES
 (1, 'John Doe', '58950.00', '2023-06-10 02:30:00', 'Developer', 1, '2023-06-10 05:34:56'),
 (2, 'Jane Smith', '74639.00', '2023-06-10 03:15:00', 'Salesperson', 0, '2023-06-10 05:34:56'),
 (3, 'David Johnson', '82105.00', '2023-06-10 04:45:00', 'Designer', 1, '2023-06-10 05:34:56'),

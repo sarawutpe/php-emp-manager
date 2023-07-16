@@ -96,7 +96,7 @@ class Services
 			// filter flag and additional flags 
 			$q = filter_var($q, FILTER_SANITIZE_FULL_SPECIAL_CHARS, FILTER_FLAG_STRIP_LOW | FILTER_FLAG_STRIP_HIGH);
 
-			$sql = "SELECT * FROM employees WHERE name LIKE :q ORDER BY timestamp DESC";
+			$sql = "SELECT * FROM employees WHERE name LIKE :q ORDER BY updated_at DESC";
 			$stmt = $this->db->prepare($sql);
 			$stmt->execute(
 				[
