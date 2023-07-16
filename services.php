@@ -55,24 +55,24 @@ class Services
 
 			$name = $req->name ?? null;
 			$salary = $req->salary ?? null;
-			$dateEmployed = $req->dateEmployed ?? null;
+			$date_employed = $req->date_employed ?? null;
 			$position = $req->position ?? null;
 			$status = $req->status ?? null;
 
 			// Check for null or empty values
-			if (empty($name) || empty($salary) || empty($dateEmployed) || empty($position) || $status === null) {
+			if (empty($name) || empty($salary) || empty($date_employed) || empty($position) || $status === null) {
 				$res->success = false;
 				$res->error = "Missing required fields";
 				echo json_encode($res);
 				return;
 			}
 
-			$sql = "INSERT INTO employees (name, salary, dateEmployed, position, status) VALUES (:name, :salary, :dateEmployed, :position, :status)";
+			$sql = "INSERT INTO employees (name, salary, date_employed, position, status) VALUES (:name, :salary, :date_employed, :position, :status)";
 			$stmt = $this->db->prepare($sql);
 			$stmt->execute([
 				'name' => $name,
 				'salary' => $salary,
-				'dateEmployed' => $dateEmployed,
+				'date_employed' => $date_employed,
 				'position' => $position,
 				'status' => $status
 			]);
@@ -128,12 +128,12 @@ class Services
 
 			$name = $req->name ?? null;
 			$salary = $req->salary ?? null;
-			$dateEmployed = $req->dateEmployed ?? null;
+			$date_employed = $req->date_employed ?? null;
 			$position = $req->position ?? null;
 			$status = $req->status ?? null;
 
 			// Check for null or empty values
-			if (empty($name) || empty($salary) || empty($dateEmployed) || empty($position) || $status === null) {
+			if (empty($name) || empty($salary) || empty($date_employed) || empty($position) || $status === null) {
 				$res->success = false;
 				$res->error = "Missing required fields";
 				echo json_encode($res);
@@ -151,12 +151,12 @@ class Services
 				return;
 			}
 
-			$sql = "UPDATE employees SET name = :name, salary = :salary, dateEmployed = :dateEmployed, position = :position, status = :status WHERE id = :id";
+			$sql = "UPDATE employees SET name = :name, salary = :salary, date_employed = :date_employed, position = :position, status = :status WHERE id = :id";
 			$stmt = $this->db->prepare($sql);
 			$stmt->execute([
 				'name' => $name,
 				'salary' => $salary,
-				'dateEmployed' => $dateEmployed,
+				'date_employed' => $date_employed,
 				'position' => $position,
 				'status' => $status,
 				'id' => $id

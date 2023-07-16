@@ -207,7 +207,7 @@
 							</td>
 							<td>${employee.name}</td>
 							<td>${employee.salary}</td>
-							<td>${employee.dateEmployed}</td>
+							<td>${employee.date_employed}</td>
 							<td>${employee.position}</td>
 							<td><div class="ml-3 rounded-circle ${employee.status == 1 ? 'bg-success' : 'bg-danger'}" style="width: 10px; height: 10px"></div></td>
 							<td>${employee.timestamp}</td>
@@ -246,7 +246,7 @@
 					</div>
 					<div class="form-group">
 						<label class="w-100 text-left" style="font-size: 14px">Date Employed</label>
-						<input id="date-employed" type="datetime-local" value="${data.dateEmployed || dayjs().format('YYYY-MM-DDTHH:mm')}" class="form-control">
+						<input id="date-employed" type="datetime-local" value="${data.date_employed || dayjs().format('YYYY-MM-DDTHH:mm')}" class="form-control">
 					</div>
 					<div class="form-group">
 						<label class="w-100 text-left" style="font-size: 14px">Position*</label>
@@ -273,7 +273,7 @@
 					const id = $('input#id').val();
 					const name = $('input#name').val();
 					const salary = $('input#salary').val();
-					const dateEmployed = $('input#date-employed').val();
+					const date_employed = $('input#date-employed').val();
 					const position = $('input#position').val();
 					const status = $("input[name='status']:checked").val()
 
@@ -285,7 +285,7 @@
 							id: id,
 							name: name,
 							salary: salary,
-							dateEmployed: dateEmployed,
+							date_employed: date_employed,
 							position: position,
 							status: status
 						});
